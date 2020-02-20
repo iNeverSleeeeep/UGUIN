@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UGUIN
 {
     [AddComponentMenu("UIN/Text", 30)]
+    [DataContract]
     public class INText : Text, ILocaleChangeListener
 	{
         [TextArea(3, 10)] [SerializeField] protected string m_RawText = string.Empty;

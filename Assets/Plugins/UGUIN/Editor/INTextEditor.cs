@@ -14,6 +14,8 @@ namespace UGUIN
 
         protected override void OnEnable()
         {
+            if (target == null)
+                return;
             base.OnEnable();
             m_RawText = serializedObject.FindProperty("m_RawText");
             m_Text = serializedObject.FindProperty("m_Text");
@@ -22,6 +24,8 @@ namespace UGUIN
 
         public override void OnInspectorGUI()
         {
+            if (target == null)
+                return;
             serializedObject.Update();
 
             EditorGUI.BeginChangeCheck();
