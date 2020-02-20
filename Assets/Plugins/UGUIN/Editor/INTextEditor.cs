@@ -12,6 +12,8 @@ namespace UGUIN
         SerializedProperty m_Text;
         SerializedProperty m_I18NText;
 
+        SerializedProperty m_FontData;
+
         protected override void OnEnable()
         {
             if (target == null)
@@ -20,6 +22,8 @@ namespace UGUIN
             m_RawText = serializedObject.FindProperty("m_RawText");
             m_Text = serializedObject.FindProperty("m_Text");
             m_I18NText = serializedObject.FindProperty("m_I18NText");
+
+            m_FontData = serializedObject.FindProperty("m_FontData");
         }
 
         public override void OnInspectorGUI()
@@ -33,6 +37,8 @@ namespace UGUIN
             EditorGUI.BeginDisabledGroup(true);
             EditorGUILayout.PropertyField(m_Text);
             EditorGUI.EndDisabledGroup();
+
+            EditorGUILayout.PropertyField(m_FontData);
 
             AppearanceControlsGUI();
             RaycastControlsGUI();
